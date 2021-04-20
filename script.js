@@ -1,10 +1,14 @@
+let dicionario = [{"pergunta":"oi", "resposta":"Olá"},
+                {"pergunta":"tchau", "resposta":"Até logo!"}];
+
 function Enviar() {
     let mensagem = document.getElementById("escrever").value;
-    if (mensagem != "" || mensagem != " ") {
+    if (mensagem != "") {
         let linhaNova = document.createElement("p");
         linhaNova.style.backgroundColor = 'greenyellow';
         linhaNova.style.borderRadius = '10px 0px 0px 10px';
         linhaNova.style.marginLeft = '600px';
+        linhaNova.style.border = 'solid black';
         linhaNova.append("Você - ", mensagem);
         document.getElementById("mensagens").append(linhaNova);
         setTimeout(() => { Resposta(mensagem), beep(); }, 1000);
@@ -20,6 +24,7 @@ function Resposta(mensagem) {
     linhaNova.style.backgroundColor = 'gray';
     linhaNova.style.borderRadius = '0px 10px 10px 0px';
     linhaNova.style.width = '600px';
+    linhaNova.style.border = 'solid black';
     if (mensagem.toUpperCase() == "OI") {
         linhaNova.append("Bot - Olá");
         document.getElementById("mensagens").append(linhaNova);
@@ -70,11 +75,17 @@ function Resposta(mensagem) {
             linhaNova.append("Resposta: Porque o cavalo tem quatro patas")
             document.getElementById("mensagens").append(linhaNova)
         }
-    } else if (mensagem.toUpperCase() == "FUNÇÕES" || mensagem.toUpperCase() == "O QUE VOCÊ PODE FAZER?") {
-        linhaNova.append("Bot - Posso responder muitas perguntas, experimente dizer: Qual é o seu nome?, Que cor devo usar hoje?, Filmes para assistir, Me conte uma piada")
-        document.getElementById("mensagens").append(linhaNova);
     } else if (mensagem.toUpperCase() == "OBRIGADO") {
         linhaNova.append("Bot - Não há de que, estou sempre pronto para ajudar!")
+        document.getElementById("mensagens").append(linhaNova);
+    } else if (mensagem.toUpperCase() == "OK") {
+        linhaNova.append("Bot - 👍🏻")
+        document.getElementById("mensagens").append(linhaNova);
+} else if (mensagem.toUpperCase() == "TCHAU" || mensagem.toUpperCase() == "FLW" || mensagem.toUpperCase() == "FALOU") {
+        linhaNova.append("Bot - Até a próxima")
+        document.getElementById("mensagens").append(linhaNova);
+    } else if (mensagem.toUpperCase() == "FUNÇÕES" || mensagem.toUpperCase() == "O QUE VOCÊ PODE FAZER?") {
+        linhaNova.append("Bot - Posso responder muitas perguntas, experimente dizer: Qual é o seu nome?, Que cor devo usar hoje?, Filmes para assistir, Me conte uma piada")
         document.getElementById("mensagens").append(linhaNova);
     } else {
         linhaNova.append("Bot - Essa frase não está listada. Para saber o que posso fazer, escreva funções.")
