@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/e4be4ba3a6.js" crossorigin="anonymous"></script>
+    <title>ChatBot</title>
+</head>
+
+<body>
+    <section id="title">
+        <h1>ChatBot</h1>
+    </section>
+    <section id="msgs">
+        <div id="usuarios">
+            <ul>
+                <li>
+                    <p id="bot"><i class="fas fa-robot"></i> Bot</p>
+                </li>
+                <li>
+                    <p id="voce"><i class="fas fa-user"></i> Você</p>
+                </li>
+            </ul>
+        </div>
+        <div id="mensagens"></div>
+    </section>
+    <section id="buttons">
+        <div class="button">
+            <input id="escrever" type="text" autofocus>
+        </div>
+        <div class="button">
+            <i id="enviar" onclick="Enviar()" class="fas fa-paper-plane fa-3x"></i>
+            <button id="apagar" onclick="Apagar()">Apagar Tudo</button>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+
+</html>
