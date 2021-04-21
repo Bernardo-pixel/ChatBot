@@ -94,6 +94,7 @@ ul{
     border-radius: 10px;
     font-size: 20px;
     border: solid;
+    outline: none;
 }
 
 #enviar{
@@ -105,7 +106,17 @@ ul{
     cursor: pointer;
 }
 
-.oi{
-    text-align: center;
-    color: gray;
+#apagar{
+    padding: 10px;
+    margin-bottom: 35px;
+    border-radius: 10px;
+    font-size: 20px;
+    border: solid black;
+    color: black;
+    background-color: white;
+}
+
+#apagar:hover{
+    color: white;
+    background-color: darkgray;
 }

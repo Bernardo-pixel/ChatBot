@@ -1,6 +1,3 @@
-let dicionario = [{"pergunta":"oi", "resposta":"Olá"},
-                {"pergunta":"tchau", "resposta":"Até logo!"}];
-
 function Enviar() {
     let mensagem = document.getElementById("escrever").value;
     if (mensagem != "") {
@@ -11,8 +8,9 @@ function Enviar() {
         linhaNova.style.border = 'solid black';
         linhaNova.append("Você - ", mensagem);
         document.getElementById("mensagens").append(linhaNova);
-        setTimeout(() => { Resposta(mensagem), beep(); }, 1000);
+        setTimeout(() => { Resposta(mensagem), beep(); }, 2000);
         beep();
+        document.getElementById("escrever").disabled = true;
     } else {
         alert("Escreva algo antes de enviar")
     }
@@ -29,7 +27,7 @@ function Resposta(mensagem) {
         linhaNova.append("Bot - Olá");
         document.getElementById("mensagens").append(linhaNova);
     } else if (mensagem.toUpperCase() == "QUAL É O SEU NOME?" || mensagem.toUpperCase() == "QUAL O SEU NOME?") {
-        linhaNova.append("Bot - Meu nome virtual é Bot, e fui criado pelo programador Bernardo.")
+        linhaNova.append("Bot - Meu nome virtual é Bot.")
         document.getElementById("mensagens").append(linhaNova);
     } else if (mensagem.toUpperCase() == "FILMES PARA ASSISTIR" || mensagem.toUpperCase() == "FILMES") {
         linhaNova.append("Bot - Filmes legais: Os dois Irmãos, Sim senhor, Filmes da Marvel")
@@ -81,7 +79,19 @@ function Resposta(mensagem) {
     } else if (mensagem.toUpperCase() == "OK") {
         linhaNova.append("Bot - 👍🏻")
         document.getElementById("mensagens").append(linhaNova);
-} else if (mensagem.toUpperCase() == "TCHAU" || mensagem.toUpperCase() == "FLW" || mensagem.toUpperCase() == "FALOU") {
+    } else if (mensagem.toUpperCase() == "BOM DIA") {
+        linhaNova.append("Bot - Tenha um ótimo dia!")
+        document.getElementById("mensagens").append(linhaNova);
+    } else if (mensagem.toUpperCase() == "BOA TARDE") {
+        linhaNova.append("Bot - Boa tarde para você também!")
+        document.getElementById("mensagens").append(linhaNova);
+    } else if (mensagem.toUpperCase() == "BOA NOITE") {
+        linhaNova.append("Bot - Durma bem")
+        document.getElementById("mensagens").append(linhaNova);
+    } else if (mensagem.toUpperCase() == "TUDO BEM") {
+        linhaNova.append("Bot - Tudo na mais ótima harmonia")
+        document.getElementById("mensagens").append(linhaNova);
+    } else if (mensagem.toUpperCase() == "TCHAU" || mensagem.toUpperCase() == "FLW" || mensagem.toUpperCase() == "FALOU") {
         linhaNova.append("Bot - Até a próxima")
         document.getElementById("mensagens").append(linhaNova);
     } else if (mensagem.toUpperCase() == "FUNÇÕES" || mensagem.toUpperCase() == "O QUE VOCÊ PODE FAZER?") {
@@ -91,6 +101,12 @@ function Resposta(mensagem) {
         linhaNova.append("Bot - Essa frase não está listada. Para saber o que posso fazer, escreva funções.")
         document.getElementById("mensagens").append(linhaNova);
     }
+    document.getElementById("escrever").disabled = false;
+    document.getElementById("escrever").focus();
+}
+
+function Apagar(){
+        document.getElementById("mensagens").innerHTML = ""
 }
 
 let campoEscrever = document.getElementById("escrever");
