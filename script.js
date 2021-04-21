@@ -106,7 +106,8 @@ function Resposta(mensagem) {
 }
 
 function Apagar(){
-        document.getElementById("mensagens").innerHTML = ""
+    document.getElementById("mensagens").innerHTML = ""
+    document.getElementById("escrever").focus();
 }
 
 let campoEscrever = document.getElementById("escrever");
